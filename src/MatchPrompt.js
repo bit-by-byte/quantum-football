@@ -272,11 +272,11 @@ const MatchPrompt = ({globalState, setGlobalState, currentMatch, setCurrentMatch
       <div style={{ padding: 20 }}>
         <Frame animate level={1} corners={0}>
           <Row>
-            <Col s={4}>
+            <Col s={12} m={4}>
               Wind speed: <b>{windSpeed}mph</b><br/>
               Team morale: <b>{morale}/100</b><br/>
             </Col>
-            <Col s={8}>
+            <Col s={12} m={8}>
               <Heading node='h5'>{globalState.teams[currentMatch.teamA].name} v {globalState.teams[currentMatch.teamB].name}</Heading>
               <p>Goals needed to win: <b>{currentMatch.teamBScore + 1}</b></p>
               <Blockquote data-layer='success'>
@@ -289,22 +289,22 @@ const MatchPrompt = ({globalState, setGlobalState, currentMatch, setCurrentMatch
       </div>
       <div style={{ padding: 20 }}>
         <Row>
-          <Col s={3}>
+          <Col s={6} m={3}>
             <div style={{ padding: 10 }}>
               {choiceA}
             </div>
           </Col>
-          <Col s={3}>
+          <Col s={6} m={3}>
             <div style={{ padding: 10 }}>
               {choiceB}
             </div>
           </Col>
-          <Col s={3}>
+          <Col s={6} m={3}>
             <div style={{ padding: 10 }}>
               {choiceC}
             </div>
           </Col>
-          <Col s={3}>
+          <Col s={6} m={3}>
             <div style={{ padding: 10 }}>
               {choiceD}
             </div>

@@ -165,7 +165,7 @@ const App = () => {
         if(index === 0)
           setTitleText(<Heading node='h1' style={{color: "Chartreuse"}}>Congratulations! You won!</Heading>);
         else
-          setTitleText(<Heading node='h1'>{"You came " + team.position + "and lost... Better luck next time!"}</Heading>)
+          setTitleText(<Heading node='h1' style={{color: "#ccff00"}}>{"You came " + team.position + "... Better luck next time!"}</Heading>)
       }
     });
     
@@ -185,7 +185,7 @@ const App = () => {
           <Frame level={1} corners={3}>
             <Row>
 
-              <Col s={4}>
+              <Col s={12} m={4}>
                 <div style={{ padding: 20 }}>
                   <div style={{ padding: 10 }}>
                     <Heading node='h3'>League Table</Heading>
@@ -213,7 +213,7 @@ const App = () => {
                 }
               </Col>
 
-              <Col s={8}>
+              <Col s={12} m={8}>
                 <MatchPrompt globalState={globalState} setGlobalState={setGlobalState} currentMatch={currentMatch} setCurrentMatch={setCurrentMatch} />
               </Col>
 
@@ -224,10 +224,10 @@ const App = () => {
         <div style={{ padding: 20 }}>
           <Frame  level={3} corners={3}>
             <Row>
-              <Col s={12}><Heading node='h3'>Quantum Info</Heading></Col>
+              <Col s={12} m={12}><Heading node='h3'>Quantum Info</Heading></Col>
             </Row>
             <Row>
-              <Col s={4}>
+              <Col s={12} m={4}>
                 {
                   _.isEmpty(chartState)
                   ? <></>
@@ -239,7 +239,7 @@ const App = () => {
                     />
                 }
               </Col>
-              <Col s={8}>
+              <Col s={12} m={8}>
                 {
                   _.isEmpty(currentMatch.circuit) 
                   ? <>Waiting for match start...</>
@@ -253,15 +253,15 @@ const App = () => {
                 ? <></>
                 :
                 <>
-                  <Col s={2}>
+                  <Col s={6} m={2}>
                     <p style={{textAlign: "center", width:"150px"}}>q1</p>
                     <canvas id="bloch1" width="150" height="150"></canvas>
                   </Col>
-                  <Col s={2}>
+                  <Col s={6} m={2}>
                     <p style={{textAlign: "center", width:"150px"}}>q0</p>
                     <canvas id="bloch0" width="150" height="150"></canvas>
                   </Col>
-                  <Col s={8}></Col>
+                  <Col s={0} m={8}></Col>
                 </>
               }
             </Row>
