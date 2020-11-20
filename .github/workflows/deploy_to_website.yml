@@ -43,10 +43,10 @@ jobs:
           # The folder you want to deploy. Default is the repository. You can change this value if you have a build step and point this to that build folder.
           build_folder: /github/workspace/build
           # Bucket name
-          bucket_name: www.goldm.dev
+          bucket_name: www.goldm.dev/demos/quantum-football-game
           # Name of the project that contains the storage bucket.
           project: goldm-dev-website
           # Path of your homepage in cloud storage bucket.
-          home_page_path: demos/quantum-football/index.html
+          home_page_path: demos/quantum-football-game/index.html
           # Path of the 404 page to be shown
           error_page_path: 404.html
