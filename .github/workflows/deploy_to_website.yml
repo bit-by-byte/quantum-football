@@ -41,4 +41,4 @@ jobs:
           GCP_SERVICE_ACCOUNT_KEY_FILE: ${{ secrets.GCP_KEY }}
           GCP_STORAGE_BUCKET: ${{ secrets.GCP_BUCKET }}
           SOURCE_DIR: /github/workspace/build
-          DEST_DIR: /demos/quantum-football-game
+          DEST_DIR: demos/quantum-football
