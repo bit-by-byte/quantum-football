@@ -14,7 +14,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  deploy:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     
@@ -34,19 +34,11 @@ jobs:
       - run: npm run build --if-present
 
       - name: Deploy to GCP Bucket
-        # You may pin to the exact commit or the version.
-        # uses: abinmn/gcp-storage-bucket-action@db210e26048a30d98e1095b372b3b02b29432e65
-        uses: abinmn/gcp-storage-bucket-action@v1.0
+        uses: weslenng/gcp-storage-sync@master
         with:
-          # GCP service key encoded as base64. The account associated with the key should have permissions to make changes in storage bucket.
-          service_key: ${{secrets.GCP_KEY}}
-          # The folder you want to deploy. Default is the repository. You can change this value if you have a build step and point this to that build folder.
-          build_folder: /github/workspace/build
-          # Bucket name
-          bucket_name: www.goldm.dev/demos/quantum-football-game
-          # Name of the project that contains the storage bucket.
-          project: goldm-dev-website
-          # Path of your homepage in cloud storage bucket.
-          home_page_path: demos/quantum-football-game/index.html
-          # Path of the 404 page to be shown
-          error_page_path: 404.html
+          args: -d
+        env:
+          GCP_SERVICE_ACCOUNT_KEY_FILE: ${{ secrets.GCP_KEY }}
+          GCP_STORAGE_BUCKET: ${{ secrets.GCP_BUCKET }}
+          SOURCE_DIR: /github/workspace/build
+          DEST_DIR: /demos/quantum-football-game
