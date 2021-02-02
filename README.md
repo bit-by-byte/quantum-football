@@ -2,7 +2,7 @@
 
 Demo browser application for my blog post on quantum computing on my website [goldm.dev/blog](https://goldm.dev/blog.html).
 
-Working demo can be [found here](https://goldm.dev/demos/quantum-football/index.html).
+Working demo can be [found here](https://quantum-football.web.app).
 
 ## To run it yourself locally
 

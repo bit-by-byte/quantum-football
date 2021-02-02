@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "goldm-dev-website"
+  },
+  "targets": {
+    "goldm-dev-website": {
+      "hosting": {
+        "quantum-football": [
+          "quantum-football"
+        ]
+      }
+    }
+  }
+}
